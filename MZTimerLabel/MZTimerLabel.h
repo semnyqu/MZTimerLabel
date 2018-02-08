@@ -73,7 +73,7 @@ typedef enum{
 @property (nonatomic,copy) NSString *timeFormat;
 
 /*Target label obejct, default self if you do not initWithLabel nor set*/
-@property (nonatomic,strong) UILabel *timeLabel;
+//@property (nonatomic,strong) UILabel *timeLabel;
 
 /*Used for replace text in range */
 @property (nonatomic, assign) NSRange textRange;
@@ -99,10 +99,10 @@ typedef enum{
 
 /*--------Init methods to choose*/
 -(id)initWithTimerType:(MZTimerLabelType)theType;
--(id)initWithLabel:(UILabel*)theLabel andTimerType:(MZTimerLabelType)theType;
--(id)initWithLabel:(UILabel*)theLabel;
+//-(id)initWithLabel:(UILabel*)theLabel andTimerType:(MZTimerLabelType)theType;
+//-(id)initWithLabel:(UILabel*)theLabel;
 /*--------designated Initializer*/
--(id)initWithFrame:(CGRect)frame label:(UILabel*)theLabel andTimerType:(MZTimerLabelType)theType;
+//-(id)initWithFrame:(CGRect)frame label:(UILabel*)theLabel andTimerType:(MZTimerLabelType)theType;
 
 /*--------Timer control methods to use*/
 -(void)start;

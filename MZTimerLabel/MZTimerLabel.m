@@ -82,7 +82,7 @@
 -(id)initWithFrame:(CGRect)frame label:(UILabel*)theLabel andTimerType:(MZTimerLabelType)theType {
     self = [super initWithFrame:frame];
     if (self) {
-        self.timeLabel = theLabel;
+//        self.timeLabel = theLabel;
         self.timerType = theType;
         [self setup];
     }
@@ -171,13 +171,13 @@
     return _dateFormatter;
 }
 
-- (UILabel*)timeLabel
-{
-    if (_timeLabel == nil) {
-        _timeLabel = self;
-    }
-    return _timeLabel;
-}
+//- (UILabel*)timeLabel
+//{
+//    if (_timeLabel == nil) {
+//        _timeLabel = self;
+//    }
+//    return _timeLabel;
+//}
 
 
 -(void)addTimeCountedByTime:(NSTimeInterval)timeToAdd
@@ -348,17 +348,21 @@
         NSTimeInterval atTime = (_timerType == MZTimerLabelTypeStopWatch) ? timeDiff : ((timeUserValue - timeDiff) < 0 ? 0 : (timeUserValue - timeDiff));
         NSString *customtext = [_delegate timerLabel:self customTextToDisplayAtTime:atTime];
         if ([customtext length]) {
-            self.timeLabel.text = customtext;
+//            self.timeLabel.text = customtext;
+            self.text = customtext;
         }else{
-            self.timeLabel.text = [self.dateFormatter stringFromDate:timeToShow];
+//            self.timeLabel.text = [self.dateFormatter stringFromDate:timeToShow];
+            self.text =  [self.dateFormatter stringFromDate:timeToShow];
         }
     }else if([_delegate respondsToSelector:@selector(timerLabel:customAttributedTextToDisplayAtTime:)]){
         NSTimeInterval atTime = (_timerType == MZTimerLabelTypeStopWatch) ? timeDiff : ((timeUserValue - timeDiff) < 0 ? 0 : (timeUserValue - timeDiff));
         NSAttributedString *customtext = [_delegate timerLabel:self customAttributedTextToDisplayAtTime:atTime];
         if ([customtext length]) {
-            self.timeLabel.attributedText = customtext;
+//            self.timeLabel.attributedText = customtext;
+            self.attributedText = customtext;
         }else{
-            self.timeLabel.text = [self.dateFormatter stringFromDate:timeToShow];
+//            self.timeLabel.text = [self.dateFormatter stringFromDate:timeToShow];
+            self.text = [self.dateFormatter stringFromDate:timeToShow];
         }
         
     }else{
@@ -375,7 +379,8 @@
             NSString *formmattedDate = [self.dateFormatter stringFromDate:timeToShow];
             NSString *beyondedDate = [formmattedDate stringByReplacingOccurrencesOfString:kHourFormatReplace withString:[NSString stringWithFormat:@"%02d",hours]];
             
-            self.timeLabel.text = beyondedDate;
+//            self.timeLabel.text = beyondedDate;
+            self.text = beyondedDate;
             self.dateFormatter.dateFormat = originalTimeFormat;
             //0.4.7 added---endb//
         }else{
@@ -387,14 +392,17 @@
                     NSMutableAttributedString *attributedString;
                     attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
                     [attributedString replaceCharactersInRange:self.textRange withAttributedString:attrTextInRange];
-                    self.timeLabel.attributedText = attributedString;
+//                    self.timeLabel.attributedText = attributedString;
+                    self.attributedText = attributedString;
         
                 } else {
                     NSString *labelText = [self.text stringByReplacingCharactersInRange:self.textRange withString:[self.dateFormatter stringFromDate:timeToShow]];
-                    self.timeLabel.text = labelText;
+//                    self.timeLabel.text = labelText;
+                    self.text = labelText;
                 }
             } else {
-                self.timeLabel.text = [self.dateFormatter stringFromDate:timeToShow];
+//                self.timeLabel.text = [self.dateFormatter stringFromDate:timeToShow];
+                self.text = [self.dateFormatter stringFromDate:timeToShow];
             }
         }
     }

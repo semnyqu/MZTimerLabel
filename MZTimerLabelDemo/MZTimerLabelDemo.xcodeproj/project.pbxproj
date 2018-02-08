@@ -276,6 +276,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MZTimerLabelDemo/MZTimerLabelDemo-Prefix.pch";
 				INFOPLIST_FILE = "MZTimerLabelDemo/MZTimerLabelDemo-Info.plist";
@@ -290,6 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MZTimerLabelDemo/MZTimerLabelDemo-Prefix.pch";
 				INFOPLIST_FILE = "MZTimerLabelDemo/MZTimerLabelDemo-Info.plist";
